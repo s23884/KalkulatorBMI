@@ -13,7 +13,13 @@
         android:theme="@style/Theme.KalkulatorBMI"
         tools:targetApi="31">
         <activity
+            android:name=".CaloriesActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BMIActivity"
             android:exported="false" />
         <activity
             android:name=".Splashactivity"

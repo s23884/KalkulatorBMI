@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEF4CA"
+    android:gravity="center"
+    tools:context=".CaloriesActivity">
+
+    <ImageView
+        android:id="@+id/imageHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toTopOf="@+id/age"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_home_24" />
+
+    <Button
+        android:id="@+id/btnOblicz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:backgroundTint="#0C4302"
+        android:text="Oblicz"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupGender"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:backgroundTint="#B22222"
+        android:text="Reset"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupGender"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="105dp"
+        app:layout_constraintBottom_toTopOf="@+id/result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weight">
+
+        <RadioButton
+            android:id="@+id/radioButtonFemale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kobieta" />
+
+        <RadioButton
+            android:id="@+id/radioButtonMale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mężczyzna" />
+
+    </RadioGroup>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/height"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="15dp"
+        android:hint="Enter height in CM"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/weight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/age" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/age"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="9dp"
+        android:hint="Enter age"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/height"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageHome" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/weight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="34dp"
+        android:hint="Enter weight in KG"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroupGender"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/height" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="117dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupGender" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

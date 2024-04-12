@@ -2,54 +2,39 @@ package com.example.kalkulatorbmi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText weightEditText;
-    private EditText heightEditText;
-    private TextView resultTextView;
-    private Button calculateButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        weightEditText = findViewById(R.id.weight);
-        heightEditText = findViewById(R.id.height);
-        resultTextView = findViewById(R.id.result);
-        calculateButton = findViewById(R.id.btnOblicz);
+        Button buttonBMI = findViewById(R.id.buttonBMI);
+        Button buttonCalories = findViewById(R.id.buttonCalories);
+        Button buttonRecipes = findViewById(R.id.buttonRecipes);
 
-        calculateButton.setOnClickListener(new View.OnClickListener() {
+        buttonBMI.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calculateBMI();
+                Intent intent = new Intent(MainActivity.this, BMIActivity.class);
+                startActivity(intent);
             }
         });
-    }
 
-    private void calculateBMI() {
-        String weightStr = weightEditText.getText().toString();
-        String heightStr = heightEditText.getText().toString();
+        buttonCalories.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CaloriesActivity.class);
+                startActivity(intent);
 
-        if (!weightStr.isEmpty() && !heightStr.isEmpty()) {
-            float weight = Float.parseFloat(weightStr);
-            float height = Float.parseFloat(heightStr) / 100;
-            float bmi = weight / (height * height);
-
-            displayBMI(bmi);
-        } else {
-            resultTextView.setText("Please enter both weight and height.");
-        }
-    }
-
-    private void displayBMI(float bmi) {
-        String bmiResult = "BMI: " + String.format("%.2f", bmi);
-        resultTextView.setText(bmiResult);
+            }
+        });
     }
 }

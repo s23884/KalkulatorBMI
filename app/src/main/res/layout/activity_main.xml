@@ -1,59 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:padding="20dp"
-    android:orientation="vertical"
+    android:background="#EEF4CA"
     tools:context=".MainActivity">
 
-    <TextView
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="20dp"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/buttonBMI"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:text="BMI Calculator"
-         />
+        android:layout_marginTop="275dp"
+        android:backgroundTint="#0C4302"
+        android:text="Calcualotor BMI"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/buttonCalories"
+        app:layout_constraintStart_toStartOf="@+id/buttonCalories"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/weight"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/buttonRecipes"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:hint="Enter weight in KG" />
-    </com.google.android.material.textfield.TextInputLayout>
+        android:layout_marginTop="22dp"
+        android:backgroundTint="#0C4302"
+        android:text="Recipes"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCalories" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/buttonCalories"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:backgroundTint="#0C4302"
+        android:text="Calories"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/buttonRecipes"
+        app:layout_constraintStart_toStartOf="@+id/buttonRecipes"
+        app:layout_constraintTop_toBottomOf="@+id/buttonBMI" />
 
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/height"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter weight in CM" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-        <Button
-            android:id="@+id/btnOblicz"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text= "Oblicz" />
-
-        <TextView
-            android:id="@+id/result"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
